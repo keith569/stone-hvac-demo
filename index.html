@@ -45,6 +45,13 @@
             display: flex; align-items: center; justify-content: center;
             font-size: 1.4rem; box-shadow: 0 0 20px rgba(14,165,233,0.4);
         }
+        .logo-img {
+            height: 46px; width: 46px; border-radius: 50%;
+            object-fit: cover; object-position: top center;
+            border: 2px solid var(--blue);
+            box-shadow: 0 0 16px rgba(14,165,233,0.5);
+            flex-shrink: 0;
+        }
         .logo-text { display: flex; flex-direction: column; }
         .logo-name { font-size: 1rem; font-weight: 900; color: var(--white); letter-spacing: -0.3px; line-height: 1.1; }
         .logo-sub { font-size: 0.65rem; font-weight: 600; color: var(--blue); letter-spacing: 1.5px; text-transform: uppercase; }
@@ -66,22 +73,15 @@
             display: flex; align-items: center;
             padding: 100px 4rem 60px;
             overflow: hidden;
-            background: url('118011831_162591685424668_1206119826656824190_n.jpg') center center / cover no-repeat;
+            background:
+                radial-gradient(ellipse at 65% 40%, rgba(14,165,233,0.12) 0%, transparent 55%),
+                radial-gradient(ellipse at 20% 80%, rgba(245,158,11,0.07) 0%, transparent 50%),
+                var(--dark);
         }
         .hero::before {
             content: '';
             position: absolute; inset: 0;
-            background: linear-gradient(
-                to right,
-                rgba(5,8,20,0.97) 0%,
-                rgba(5,8,20,0.92) 30%,
-                rgba(5,8,20,0.28) 52%,
-                rgba(5,8,20,0.04) 70%,
-                rgba(5,8,20,0.0) 100%
-            );
-        }
-        @media (max-width: 900px) {
-            .hero::before { background: rgba(5,8,20,0.88); }
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230ea5e9' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
         .hero-content { position: relative; z-index: 1; max-width: 680px; }
         .hero-badge {
@@ -293,7 +293,7 @@
 <!-- NAV -->
 <nav>
     <a href="/" class="logo-wrap">
-        <img src="493141381_1277036954421772_7666900756997524886_n.jpg" alt="Stone AC Cooling & Heating" class="logo-img">
+        <img src="493141381_1277036954421772_7666900756997524886_n.jpg" alt="Stone AC Cooling & Heating" class="logo-img" width="46" height="46">
         <div class="logo-text">
             <span class="logo-name">Stone AC Cooling & Heating</span>
             <span class="logo-sub">Casa Grande · Phoenix Area</span>
@@ -608,7 +608,7 @@
     <div class="footer-grid">
         <div class="footer-brand">
             <a href="/" class="logo-wrap">
-                <img src="493141381_1277036954421772_7666900756997524886_n.jpg" alt="Stone AC Cooling & Heating" class="logo-img">
+                <img src="493141381_1277036954421772_7666900756997524886_n.jpg" alt="Stone AC Cooling & Heating" class="logo-img" width="46" height="46">
                 <div class="logo-text">
                     <span class="logo-name">Stone AC Cooling & Heating</span>
                     <span class="logo-sub">Casa Grande · Phoenix Area</span>
