@@ -69,31 +69,32 @@
 
         /* ── HERO ── */
         .hero {
-            min-height: 100vh; position: relative;
-            display: flex; align-items: center;
-            padding: 100px 4rem 60px;
-            overflow: hidden;
-            background:
-                radial-gradient(ellipse at 70% 50%, rgba(14,165,233,0.09) 0%, transparent 60%),
-                var(--dark);
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 55% 45%;
+            background: var(--dark);
+            padding-top: 68px;
         }
-        .hero-logo-watermark {
-            position: absolute;
-            right: -2%; top: 50%;
-            transform: translateY(-50%);
-            width: 68%; max-width: 720px;
-            opacity: 0.18;
-            filter: grayscale(1) invert(1);
-            pointer-events: none;
-            user-select: none;
-            z-index: 0;
+        .hero-left {
+            display: flex; flex-direction: column; justify-content: center;
+            padding: 3rem 3rem 3rem 4rem;
         }
-        .hero::before {
+        .hero-right {
+            position: relative; overflow: hidden;
+        }
+        .hero-right img {
+            width: 100%; height: 100%;
+            object-fit: cover; object-position: center top;
+            display: block;
+        }
+        .hero-right::after {
             content: '';
             position: absolute; inset: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230ea5e9' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background: linear-gradient(to right, rgba(8,13,24,0.6) 0%, rgba(8,13,24,0.1) 60%, transparent 100%);
         }
-        .hero-content { position: relative; z-index: 1; max-width: 680px; }
+        .hero-stats-row { display: flex; gap: 2.5rem; margin-top: 2rem; flex-wrap: wrap; }
+        .hero-stat-inline .num { font-size: 1.6rem; font-weight: 900; color: var(--blue); line-height: 1; }
+        .hero-stat-inline .lbl { font-size: 0.7rem; color: var(--muted); font-weight: 600; margin-top: 0.2rem; }
         .hero-badge {
             display: inline-flex; align-items: center; gap: 0.5rem;
             background: rgba(14,165,233,0.1); color: var(--blue);
@@ -276,17 +277,6 @@
         .footer-bottom { max-width: 1100px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
         .footer-bottom p { color: var(--muted); font-size: 0.8rem; }
 
-        /* ── HERO VISUAL BLOCK ── */
-        .hero-visual {
-            position: absolute; right: 4rem; top: 50%; transform: translateY(-50%);
-            display: flex; flex-direction: column; gap: 1rem; z-index: 1;
-        }
-        .hero-stat-card {
-            background: rgba(14,165,233,0.08); border: 1px solid rgba(14,165,233,0.2);
-            border-radius: 12px; padding: 1rem 1.5rem; text-align: center; min-width: 140px;
-        }
-        .hero-stat-num { font-size: 2.2rem; font-weight: 900; color: var(--blue); line-height: 1; }
-        .hero-stat-label { font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; font-weight: 600; }
 
         /* ── GALLERY ── */
         .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2.5rem; }
@@ -297,11 +287,13 @@
         .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 0.75rem 1rem; background: linear-gradient(transparent, rgba(5,8,20,0.85)); color: var(--white); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.5px; }
 
         @media (max-width: 900px) {
-            .hero { padding: 100px 2rem 60px; text-align: center; }
+            .hero { grid-template-columns: 1fr; padding-top: 68px; }
+            .hero-left { padding: 2.5rem 1.5rem; text-align: center; }
+            .hero-right { min-height: 320px; }
             .hero-sub { margin: 0 auto 1.5rem; }
             .hero-ctas { justify-content: center; }
             .personal-note { margin: 0 auto 2rem; }
-            .hero-visual { display: none; }
+            .hero-stats-row { justify-content: center; }
             nav .nav-link { display: none; }
         }
     </style>
@@ -327,8 +319,7 @@
 
 <!-- HERO -->
 <section class="hero">
-    <img src="493141381_1277036954421772_7666900756997524886_n.jpg" alt="" aria-hidden="true" class="hero-logo-watermark">
-    <div class="hero-content">
+    <div class="hero-left">
         <div class="hero-badge">✔ Licensed · Bonded · Family-Owned · Casa Grande, AZ</div>
         <h1>Solid Work.<br><span class="blue">Honest Prices.</span><br><span class="amber">Brad's Got You.</span></h1>
         <p class="hero-sub">Residential and commercial HVAC service in Casa Grande and the Phoenix metro. When your AC goes out in Arizona heat — you need someone you can trust to show up, do it right, and not overcharge you.</p>
@@ -339,22 +330,14 @@
             <a href="tel:6027487840" class="btn-blue">📞 (602) 748-7840</a>
             <a href="#contact" class="btn-outline">Request a Quote →</a>
         </div>
+        <div class="hero-stats-row">
+            <div class="hero-stat-inline"><div class="num">4.9★</div><div class="lbl">Google Rating</div></div>
+            <div class="hero-stat-inline"><div class="num">24/7</div><div class="lbl">Emergency Service</div></div>
+            <div class="hero-stat-inline"><div class="num">Res & Com</div><div class="lbl">Both Served</div></div>
+        </div>
     </div>
-
-    <!-- Floating stat cards -->
-    <div class="hero-visual">
-        <div class="hero-stat-card">
-            <div class="hero-stat-num">4.9★</div>
-            <div class="hero-stat-label">Google Rating</div>
-        </div>
-        <div class="hero-stat-card">
-            <div class="hero-stat-num">Res &<br>Com</div>
-            <div class="hero-stat-label" style="font-size:0.7rem;">Residential & Commercial</div>
-        </div>
-        <div class="hero-stat-card">
-            <div class="hero-stat-num">24/7</div>
-            <div class="hero-stat-label">Emergency Service</div>
-        </div>
+    <div class="hero-right">
+        <img src="118304507_162591735424663_9138916963875977831_n.jpg" alt="Brad Stone — Owner, Stone AC Cooling & Heating">
     </div>
 </section>
 
