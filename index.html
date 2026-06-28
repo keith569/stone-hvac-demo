@@ -278,6 +278,14 @@
         .hero-stat-num { font-size: 2.2rem; font-weight: 900; color: var(--blue); line-height: 1; }
         .hero-stat-label { font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; font-weight: 600; }
 
+        /* ── GALLERY ── */
+        .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2.5rem; }
+        @media (max-width: 768px) { .gallery-grid { grid-template-columns: 1fr; } }
+        .gallery-item { position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); aspect-ratio: 4/3; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
+        .gallery-item:hover img { transform: scale(1.04); }
+        .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 0.75rem 1rem; background: linear-gradient(transparent, rgba(5,8,20,0.85)); color: var(--white); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.5px; }
+
         @media (max-width: 900px) {
             .hero { padding: 100px 2rem 60px; text-align: center; }
             .hero-sub { margin: 0 auto 1.5rem; }
@@ -469,7 +477,7 @@
 
 <!-- WORK PHOTO BANNER -->
 <div style="position:relative;height:380px;overflow:hidden;">
-    <img src="118139965_162591702091333_7045124659652021867_n.jpg" alt="Stone AC — refrigerant service in progress" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;">
+    <img src="101301091_133108995039604_6510121576837414912_n.jpg" alt="Stone AC — completed mini-split installation" style="width:100%;height:100%;object-fit:cover;object-position:center center;display:block;">
     <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(5,8,20,0.88) 0%,rgba(5,8,20,0.55) 50%,rgba(5,8,20,0.25) 100%);display:flex;align-items:center;padding:0 4rem;">
         <div>
             <p style="font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:0.75rem;">In the Field Daily</p>
@@ -478,6 +486,29 @@
         </div>
     </div>
 </div>
+
+<!-- WORK GALLERY -->
+<section class="section section-darker">
+    <div class="container">
+        <p class="section-label">Our Work</p>
+        <h2 class="section-title section-title-white">Jobs From the Field</h2>
+        <p class="section-sub section-sub-light">Mini-split installs, refrigerant service, and more — this is what Stone AC's work looks like up close.</p>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="100949729_133109078372929_4908096889938771968_n.jpg" alt="Stone AC — mini-split outdoor unit installation in progress">
+                <div class="gallery-caption">Mini-Split Outdoor Install</div>
+            </div>
+            <div class="gallery-item">
+                <img src="101987775_133109105039593_7034673667933995008_n.jpg" alt="Stone AC — wall-mounted indoor air handler installed in bedroom">
+                <div class="gallery-caption">Indoor Air Handler Install</div>
+            </div>
+            <div class="gallery-item">
+                <img src="118139965_162591702091333_7045124659652021867_n.jpg" alt="Stone AC — refrigerant service in progress">
+                <div class="gallery-caption">Refrigerant Service</div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- WHY US -->
 <section class="section section-white">
