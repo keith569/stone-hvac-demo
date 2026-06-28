@@ -74,8 +74,19 @@
             padding: 100px 4rem 60px;
             overflow: hidden;
             background:
-                linear-gradient(to right, rgba(8,13,24,0.97) 0%, rgba(8,13,24,0.92) 38%, rgba(8,13,24,0.68) 65%, rgba(8,13,24,0.45) 100%),
-                url('118011831_162591685424668_1206119826656824190_n.jpg') center center / cover no-repeat;
+                radial-gradient(ellipse at 70% 50%, rgba(14,165,233,0.09) 0%, transparent 60%),
+                var(--dark);
+        }
+        .hero-logo-watermark {
+            position: absolute;
+            right: 5%; top: 50%;
+            transform: translateY(-50%);
+            width: 46%; max-width: 560px;
+            opacity: 0.07;
+            filter: grayscale(1) invert(1);
+            pointer-events: none;
+            user-select: none;
+            z-index: 0;
         }
         .hero::before {
             content: '';
@@ -316,6 +327,7 @@
 
 <!-- HERO -->
 <section class="hero">
+    <img src="493141381_1277036954421772_7666900756997524886_n.jpg" alt="" aria-hidden="true" class="hero-logo-watermark">
     <div class="hero-content">
         <div class="hero-badge">✔ Licensed · Bonded · Family-Owned · Casa Grande, AZ</div>
         <h1>Solid Work.<br><span class="blue">Honest Prices.</span><br><span class="amber">Brad's Got You.</span></h1>
