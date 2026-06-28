@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stone AC Cooling & Heating | Casa Grande & Phoenix Area | Honest HVAC Service</title>
+    <meta name="description" content="Stone AC Cooling & Heating — family-owned HVAC service in Casa Grande and the Phoenix metro. AC repair, installation, heating, and furnace service. Honest work. Fair prices. Call Brad: (602) 748-7840.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --dark:    #080d18;
+            --dark2:   #0d1526;
+            --dark3:   #101c30;
+            --blue:    #0ea5e9;
+            --blue-h:  #0284c7;
+            --blue-d:  #0c4a6e;
+            --amber:   #f59e0b;
+            --white:   #ffffff;
+            --muted:   #94a3b8;
+            --text:    #1e293b;
+            --text-lt: #64748b;
+            --border:  rgba(14,165,233,0.18);
+            --light-border: #e2e8f0;
+        }
+
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text); line-height: 1.6; overflow-x: hidden; background: var(--dark); }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            padding: 0 2rem; height: 68px;
+            display: flex; align-items: center; justify-content: space-between;
+            background: rgba(8,13,24,0.95); backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+        }
+        .logo-wrap { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+        .logo-icon {
+            width: 42px; height: 42px; border-radius: 10px;
+            background: linear-gradient(135deg, var(--blue), var(--amber));
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem; box-shadow: 0 0 20px rgba(14,165,233,0.4);
+        }
+        .logo-text { display: flex; flex-direction: column; }
+        .logo-name { font-size: 1rem; font-weight: 900; color: var(--white); letter-spacing: -0.3px; line-height: 1.1; }
+        .logo-sub { font-size: 0.65rem; font-weight: 600; color: var(--blue); letter-spacing: 1.5px; text-transform: uppercase; }
+        .nav-right { display: flex; align-items: center; gap: 1.25rem; }
+        .nav-link { color: var(--muted); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
+        .nav-link:hover { color: var(--white); }
+        .nav-cta {
+            background: var(--blue); color: var(--white);
+            padding: 0.5rem 1.25rem; border-radius: 8px;
+            font-weight: 800; font-size: 0.875rem; text-decoration: none;
+            transition: background 0.2s, transform 0.15s;
+            box-shadow: 0 0 20px rgba(14,165,233,0.3);
+        }
+        .nav-cta:hover { background: var(--blue-h); transform: translateY(-1px); }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 100vh; position: relative;
+            display: flex; align-items: center;
+            padding: 100px 4rem 60px;
+            overflow: hidden;
+            background: url('118011831_162591685424668_1206119826656824190_n.jpg') center center / cover no-repeat;
+        }
+        .hero::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: linear-gradient(
+                to right,
+                rgba(5,8,20,0.97) 0%,
+                rgba(5,8,20,0.92) 30%,
+                rgba(5,8,20,0.28) 52%,
+                rgba(5,8,20,0.04) 70%,
+                rgba(5,8,20,0.0) 100%
+            );
+        }
+        @media (max-width: 900px) {
+            .hero::before { background: rgba(5,8,20,0.88); }
+        }
+        .hero-content { position: relative; z-index: 1; max-width: 680px; }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: rgba(14,165,233,0.1); color: var(--blue);
+            border: 1px solid rgba(14,165,233,0.3);
+            padding: 0.4rem 1rem; border-radius: 6px;
+            font-size: 0.78rem; font-weight: 700; letter-spacing: 0.5px;
+            margin-bottom: 1.5rem; text-transform: uppercase;
+        }
+        .hero h1 {
+            font-size: clamp(2.6rem, 5.5vw, 4.5rem);
+            font-weight: 900; line-height: 1.0; letter-spacing: -2px;
+            color: var(--white); margin-bottom: 1.5rem;
+        }
+        .hero h1 .blue { color: var(--blue); }
+        .hero h1 .amber { color: var(--amber); }
+        .hero-sub {
+            font-size: 1.1rem; color: rgba(255,255,255,0.75);
+            max-width: 520px; line-height: 1.75; margin-bottom: 1.5rem;
+        }
+        .personal-note {
+            display: flex; align-items: flex-start; gap: 1rem;
+            background: rgba(14,165,233,0.07); border: 1px solid rgba(14,165,233,0.2);
+            border-left: 3px solid var(--blue);
+            border-radius: 10px; padding: 1.1rem 1.25rem;
+            margin-bottom: 2rem; max-width: 520px;
+        }
+        .personal-note p { font-size: 0.9rem; color: rgba(255,255,255,0.8); line-height: 1.6; font-style: italic; }
+        .personal-note span { color: var(--blue); font-style: normal; font-weight: 700; }
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn-blue {
+            background: var(--blue); color: var(--white);
+            padding: 0.9rem 2rem; border-radius: 10px;
+            font-weight: 900; font-size: 1rem; text-decoration: none;
+            transition: all 0.2s; box-shadow: 0 0 30px rgba(14,165,233,0.4);
+        }
+        .btn-blue:hover { background: var(--blue-h); transform: translateY(-2px); box-shadow: 0 0 45px rgba(14,165,233,0.6); }
+        .btn-outline {
+            background: rgba(255,255,255,0.07); backdrop-filter: blur(8px);
+            color: var(--white); padding: 0.9rem 2rem;
+            border-radius: 10px; font-weight: 700; font-size: 1rem;
+            text-decoration: none; border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.2s;
+        }
+        .btn-outline:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.14); }
+
+        /* ── TRUST BAR ── */
+        .trust-bar {
+            background: linear-gradient(90deg, var(--blue-d), var(--blue));
+            padding: 0.9rem 2rem;
+        }
+        .trust-items {
+            max-width: 1100px; margin: 0 auto;
+            display: flex; justify-content: center; align-items: center;
+            gap: 2.5rem; flex-wrap: wrap;
+        }
+        .trust-item { display: flex; align-items: center; gap: 0.5rem; color: var(--white); font-size: 0.875rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        /* ── SECTIONS ── */
+        .section { padding: 5rem 2rem; }
+        .section-dark { background: var(--dark2); }
+        .section-darker { background: var(--dark); }
+        .section-white { background: var(--white); }
+        .container { max-width: 1100px; margin: 0 auto; }
+        .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: 0.75rem; }
+        .section-title { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 900; letter-spacing: -0.5px; margin-bottom: 1rem; }
+        .section-title-white { color: var(--white); }
+        .section-title-dark { color: var(--text); }
+        .section-sub { font-size: 1rem; max-width: 540px; line-height: 1.75; margin-bottom: 3rem; }
+        .section-sub-light { color: var(--muted); }
+        .section-sub-dark { color: var(--text-lt); }
+
+        /* ── SERVICES ── */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 3rem; }
+        .service-card {
+            background: rgba(14,165,233,0.04); border: 1px solid var(--border);
+            border-radius: 14px; padding: 1.75rem;
+            transition: border-color 0.2s, transform 0.2s, background 0.2s;
+        }
+        .service-card:hover { border-color: rgba(14,165,233,0.4); transform: translateY(-3px); background: rgba(14,165,233,0.08); }
+        .service-icon {
+            width: 46px; height: 46px;
+            background: rgba(14,165,233,0.1); border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.25rem; margin-bottom: 1rem;
+        }
+        .service-card h3 { font-size: 1rem; font-weight: 800; color: var(--white); margin-bottom: 0.4rem; }
+        .service-card p { font-size: 0.875rem; color: var(--muted); line-height: 1.65; }
+
+        /* ── REVIEWS ── */
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+        .review-card {
+            background: rgba(14,165,233,0.04); border: 1px solid var(--border);
+            border-radius: 14px; padding: 1.75rem;
+        }
+        .review-stars { color: var(--amber); font-size: 1rem; margin-bottom: 0.75rem; letter-spacing: 2px; }
+        .review-text { font-size: 0.9rem; color: rgba(255,255,255,0.8); line-height: 1.7; font-style: italic; margin-bottom: 1rem; }
+        .review-author { font-size: 0.8rem; font-weight: 700; color: var(--blue); }
+
+        /* ── ABOUT / STORY ── */
+        .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        @media (max-width: 768px) { .story-grid { grid-template-columns: 1fr; gap: 2rem; } }
+        .story-stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+        .stat-box {
+            background: rgba(14,165,233,0.06); border: 1px solid var(--border);
+            border-radius: 12px; padding: 1.25rem; text-align: center;
+        }
+        .stat-num { font-size: 2rem; font-weight: 900; color: var(--blue); line-height: 1; }
+        .stat-label { font-size: 0.8rem; color: var(--muted); margin-top: 0.3rem; }
+        .story-values { list-style: none; margin-top: 1.5rem; }
+        .story-values li { display: flex; align-items: center; gap: 0.75rem; color: rgba(255,255,255,0.8); font-size: 0.95rem; padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .story-values li:last-child { border-bottom: none; }
+        .story-values li::before { content: '✓'; color: var(--blue); font-weight: 900; font-size: 1rem; flex-shrink: 0; }
+
+        /* ── WHY ── */
+        .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+        .why-card {
+            background: var(--white); border-radius: 14px; padding: 1.75rem;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06); text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .why-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+        .why-icon { font-size: 2rem; margin-bottom: 0.75rem; display: block; }
+        .why-card h3 { font-size: 1rem; font-weight: 800; color: var(--text); margin-bottom: 0.4rem; }
+        .why-card p { font-size: 0.875rem; color: var(--text-lt); line-height: 1.65; }
+
+        /* ── AREAS ── */
+        .areas-flex { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+        .area-tag {
+            background: rgba(14,165,233,0.08); border: 1.5px solid rgba(14,165,233,0.25);
+            color: var(--blue); padding: 0.45rem 1.1rem;
+            border-radius: 6px; font-size: 0.875rem; font-weight: 700;
+        }
+
+        /* ── CTA BANNER ── */
+        .cta-banner {
+            background: linear-gradient(135deg, var(--blue-d) 0%, var(--dark2) 100%);
+            padding: 5rem 2rem; text-align: center;
+            border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+        }
+        .cta-banner h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; color: var(--white); letter-spacing: -0.5px; margin-bottom: 0.75rem; }
+        .cta-banner p { color: rgba(255,255,255,0.75); font-size: 1.05rem; margin-bottom: 2rem; }
+        .btn-blue-lg {
+            background: var(--blue); color: var(--white);
+            padding: 1.1rem 2.5rem; border-radius: 10px;
+            font-weight: 900; font-size: 1.1rem; text-decoration: none;
+            display: inline-block; transition: all 0.2s;
+            box-shadow: 0 0 35px rgba(14,165,233,0.45);
+        }
+        .btn-blue-lg:hover { background: var(--blue-h); transform: translateY(-2px); }
+
+        /* ── CONTACT ── */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+        @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; gap: 2rem; } }
+        .contact-info h3 { font-size: 1.3rem; font-weight: 800; color: var(--text); margin-bottom: 1.5rem; }
+        .contact-item { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.25rem; }
+        .c-icon { width: 40px; height: 40px; background: #eff6ff; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+        .c-text { font-size: 0.95rem; color: var(--text-lt); }
+        .c-text strong { display: block; color: var(--text); font-weight: 700; margin-bottom: 0.1rem; }
+        .c-text a { color: var(--blue); text-decoration: none; font-weight: 700; }
+        .c-text a:hover { text-decoration: underline; }
+        .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        @media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
+        .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+        .form-label { font-size: 0.85rem; font-weight: 700; color: var(--text); }
+        .form-input, .form-select, .form-textarea { padding: 0.75rem 1rem; border: 2px solid var(--light-border); border-radius: 8px; font-size: 0.95rem; font-family: inherit; color: var(--text); background: var(--white); transition: border-color 0.2s; outline: none; }
+        .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--blue); }
+        .form-textarea { resize: vertical; min-height: 110px; }
+        .form-submit { background: var(--blue); color: var(--white); border: none; padding: 0.9rem 2rem; border-radius: 8px; font-size: 1rem; font-weight: 800; cursor: pointer; transition: background 0.2s, transform 0.15s; font-family: inherit; }
+        .form-submit:hover { background: var(--blue-h); transform: translateY(-1px); }
+
+        /* ── FOOTER ── */
+        footer { background: var(--dark3); padding: 3rem 2rem 2rem; border-top: 1px solid var(--border); }
+        .footer-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 2.5rem; }
+        @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; gap: 2rem; } }
+        .footer-brand p { color: var(--muted); font-size: 0.875rem; line-height: 1.7; margin-top: 0.75rem; max-width: 300px; }
+        .footer-col h4 { color: var(--blue); font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 1rem; }
+        .footer-col a { display: block; color: var(--muted); text-decoration: none; font-size: 0.875rem; margin-bottom: 0.5rem; transition: color 0.2s; }
+        .footer-col a:hover { color: var(--white); }
+        .footer-bottom { max-width: 1100px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .footer-bottom p { color: var(--muted); font-size: 0.8rem; }
+
+        /* ── HERO VISUAL BLOCK ── */
+        .hero-visual {
+            position: absolute; right: 4rem; top: 50%; transform: translateY(-50%);
+            display: flex; flex-direction: column; gap: 1rem; z-index: 1;
+        }
+        .hero-stat-card {
+            background: rgba(14,165,233,0.08); border: 1px solid rgba(14,165,233,0.2);
+            border-radius: 12px; padding: 1rem 1.5rem; text-align: center; min-width: 140px;
+        }
+        .hero-stat-num { font-size: 2.2rem; font-weight: 900; color: var(--blue); line-height: 1; }
+        .hero-stat-label { font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; font-weight: 600; }
+
+        @media (max-width: 900px) {
+            .hero { padding: 100px 2rem 60px; text-align: center; }
+            .hero-sub { margin: 0 auto 1.5rem; }
+            .hero-ctas { justify-content: center; }
+            .personal-note { margin: 0 auto 2rem; }
+            .hero-visual { display: none; }
+            nav .nav-link { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <a href="/" class="logo-wrap">
+        <img src="493141381_1277036954421772_7666900756997524886_n.jpg" alt="Stone AC Cooling & Heating" class="logo-img">
+        <div class="logo-text">
+            <span class="logo-name">Stone AC Cooling & Heating</span>
+            <span class="logo-sub">Casa Grande · Phoenix Area</span>
+        </div>
+    </a>
+    <div class="nav-right">
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="tel:6027487840" class="nav-cta">📞 Call Now</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-badge">✔ Licensed · Bonded · Family-Owned · Casa Grande, AZ</div>
+        <h1>Solid Work.<br><span class="blue">Honest Prices.</span><br><span class="amber">Brad's Got You.</span></h1>
+        <p class="hero-sub">Residential and commercial HVAC service in Casa Grande and the Phoenix metro. When your AC goes out in Arizona heat — you need someone you can trust to show up, do it right, and not overcharge you.</p>
+        <div class="personal-note">
+            <p>"I've built this business on doing things the right way. <span>You'll always know what you're paying and why</span> — no runaround, no inflated quotes. That's just how I work."<br>— Brad Stone, Owner</p>
+        </div>
+        <div class="hero-ctas">
+            <a href="tel:6027487840" class="btn-blue">📞 (602) 748-7840</a>
+            <a href="#contact" class="btn-outline">Request a Quote →</a>
+        </div>
+    </div>
+
+    <!-- Floating stat cards -->
+    <div class="hero-visual">
+        <div class="hero-stat-card">
+            <div class="hero-stat-num">4.9★</div>
+            <div class="hero-stat-label">Google Rating</div>
+        </div>
+        <div class="hero-stat-card">
+            <div class="hero-stat-num">Res &<br>Com</div>
+            <div class="hero-stat-label" style="font-size:0.7rem;">Residential & Commercial</div>
+        </div>
+        <div class="hero-stat-card">
+            <div class="hero-stat-num">24/7</div>
+            <div class="hero-stat-label">Emergency Service</div>
+        </div>
+    </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+    <div class="trust-items">
+        <div class="trust-item">✔ Licensed &amp; Insured</div>
+        <div class="trust-item">🏠 Family-Owned</div>
+        <div class="trust-item">💰 Upfront Pricing</div>
+        <div class="trust-item">⚡ Fast Response</div>
+        <div class="trust-item">🌡️ Res &amp; Commercial</div>
+    </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section section-dark" id="services">
+    <div class="container">
+        <p class="section-label">What We Do</p>
+        <h2 class="section-title section-title-white">HVAC Services — Done Right</h2>
+        <p class="section-sub section-sub-light">All makes and models. Residential and commercial. Straight answers, fair quotes, and work Brad stands behind.</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>AC Repair</h3>
+                <p>System not cooling? Brad diagnoses the problem honestly and fixes what's actually broken — no parts you don't need.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">❄️</div>
+                <h3>AC Installation</h3>
+                <p>New system or full replacement — installed clean and properly sized for your home or building. Done right the first time.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔥</div>
+                <h3>Heating Repair</h3>
+                <p>Furnace or heat pump giving you trouble? We get it diagnosed and back running before the temperature drops further.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📦</div>
+                <h3>Furnace Installation</h3>
+                <p>Full furnace replacement and new installations — expert sizing, clean install, and everything tested before we leave.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔍</div>
+                <h3>System Maintenance</h3>
+                <p>Regular tune-ups extend system life and keep energy bills in check. We'll tell you exactly what we find — no surprises.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏢</div>
+                <h3>Commercial HVAC</h3>
+                <p>We handle commercial buildings too. Reliable service that keeps your business comfortable and your tenants happy.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section section-darker">
+    <div class="container">
+        <p class="section-label">What Customers Say</p>
+        <h2 class="section-title section-title-white">4.9 Stars on Google</h2>
+        <p class="section-sub section-sub-light">Casa Grande homeowners and businesses keep calling Brad back — and keep sending their neighbors.</p>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Brad does great work. Immediate response, very knowledgeable and very personable. I highly recommend Stone HVAC."</p>
+                <div class="review-author">— Google Review · Casa Grande, AZ</div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Brad is knowledgeable, honest, and reasonable. He is not only great at maintenance and repair — he has very high integrity and great people skills."</p>
+                <div class="review-author">— Google Review · Casa Grande, AZ</div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Professional and affordable, family owned. Staff is honest and on time. I won't call anyone else for my HVAC needs."</p>
+                <div class="review-author">— Google Review · Casa Grande, AZ</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section section-dark" id="about">
+    <div class="container">
+        <div class="story-grid">
+            <div>
+                <p class="section-label">Our Story</p>
+                <h2 class="section-title section-title-white">Built on Integrity. Run by Brad.</h2>
+                <p style="color:rgba(255,255,255,0.75);font-size:1rem;line-height:1.8;margin-bottom:1.5rem;">Stone AC Cooling & Heating is a locally owned, family-operated HVAC company serving Casa Grande and the Phoenix metro area. Brad Stone built this company on the idea that customers deserve straight answers, honest pricing, and quality work — every single time.</p>
+                <p style="color:rgba(255,255,255,0.75);font-size:1rem;line-height:1.8;">When you call Stone HVAC, you're talking to the person who's going to show up and do the work. No dispatch maze, no subcontractors — just Brad and a commitment to getting it right.</p>
+                <ul class="story-values">
+                    <li>Transparent pricing — you know the cost before we start</li>
+                    <li>Residential AND commercial service</li>
+                    <li>Direct contact with Brad — no runaround</li>
+                    <li>Licensed, bonded, and fully insured</li>
+                    <li>4.9-star Google rating from real Casa Grande customers</li>
+                </ul>
+            </div>
+            <div>
+                <div style="position:relative;border-radius:16px;overflow:hidden;box-shadow:0 0 50px rgba(14,165,233,0.15);border:1px solid rgba(14,165,233,0.2);margin-bottom:1.5rem;">
+                    <img src="118304507_162591735424663_9138916963875977831_n.jpg" alt="Brad Stone — Stone AC Cooling & Heating" style="width:100%;height:340px;object-fit:cover;object-position:center top;display:block;">
+                    <div style="position:absolute;bottom:0;left:0;right:0;padding:1rem 1.25rem;background:linear-gradient(transparent,rgba(5,8,20,0.9));">
+                        <p style="color:var(--white);font-size:0.875rem;font-weight:700;">Brad Stone — Owner, Stone AC Cooling & Heating</p>
+                    </div>
+                </div>
+                <div class="story-stat-grid">
+                    <div class="stat-box">
+                        <div class="stat-num">4.9★</div>
+                        <div class="stat-label">Google Rating</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-num">Res &<br>Com</div>
+                        <div class="stat-label" style="font-size:0.72rem;">Both Served</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-num">24/7</div>
+                        <div class="stat-label">Emergency Available</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-num">1</div>
+                        <div class="stat-label">Call to Brad Directly</div>
+                    </div>
+                </div>
+                <div style="margin-top:1.5rem;background:rgba(14,165,233,0.07);border:1px solid rgba(14,165,233,0.2);border-left:3px solid var(--blue);border-radius:10px;padding:1.25rem;">
+                    <p style="color:rgba(255,255,255,0.9);font-size:0.9rem;line-height:1.7;font-style:italic;">"Fair is fair. I'm not here to squeeze you for every dollar. I'm here to fix your system and leave you comfortable — and hopefully get a referral." <strong style="color:var(--blue);font-style:normal;">— Brad</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WORK PHOTO BANNER -->
+<div style="position:relative;height:380px;overflow:hidden;">
+    <img src="118139965_162591702091333_7045124659652021867_n.jpg" alt="Stone AC — refrigerant service in progress" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;">
+    <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(5,8,20,0.88) 0%,rgba(5,8,20,0.55) 50%,rgba(5,8,20,0.25) 100%);display:flex;align-items:center;padding:0 4rem;">
+        <div>
+            <p style="font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:0.75rem;">In the Field Daily</p>
+            <h2 style="font-size:clamp(1.8rem,4vw,3rem);font-weight:900;color:var(--white);letter-spacing:-1px;line-height:1.1;margin-bottom:0.75rem;">Real Work.<br>Real Results.</h2>
+            <p style="color:rgba(255,255,255,0.8);font-size:1rem;max-width:400px;line-height:1.7;">Casa Grande, Maricopa, Coolidge, Phoenix — Brad's already in your area. Call and he'll come to you.</p>
+        </div>
+    </div>
+</div>
+
+<!-- WHY US -->
+<section class="section section-white">
+    <div class="container">
+        <p class="section-label">Why Choose Stone</p>
+        <h2 class="section-title section-title-dark">What Sets Brad Apart</h2>
+        <p class="section-sub section-sub-dark">Not a call center. Not a franchise. Just an experienced, honest HVAC tech who built a business on doing things right.</p>
+        <div class="why-grid">
+            <div class="why-card">
+                <span class="why-icon">👨‍🔧</span>
+                <h3>Owner Does the Work</h3>
+                <p>Brad is the tech on your job. You get direct owner accountability on every service call — not a random subcontractor.</p>
+            </div>
+            <div class="why-card">
+                <span class="why-icon">💬</span>
+                <h3>Straight Answers</h3>
+                <p>No technical jargon to confuse you. Brad tells you exactly what's wrong, what it costs, and what your options are.</p>
+            </div>
+            <div class="why-card">
+                <span class="why-icon">💰</span>
+                <h3>No Surprise Bills</h3>
+                <p>You know the price before we start. What we quote is what you pay. Period.</p>
+            </div>
+            <div class="why-card">
+                <span class="why-icon">🏢</span>
+                <h3>Res & Commercial</h3>
+                <p>Home or business — Stone HVAC handles both. One call, one reliable tech, one standard of quality.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- AREAS -->
+<section class="section section-dark">
+    <div class="container">
+        <p class="section-label">Where We Work</p>
+        <h2 class="section-title section-title-white">Serving Casa Grande & the Phoenix Area</h2>
+        <p class="section-sub section-sub-light">Based in Casa Grande — we serve residential and commercial customers across central Arizona.</p>
+        <div class="areas-flex">
+            <span class="area-tag">Casa Grande</span>
+            <span class="area-tag">Phoenix</span>
+            <span class="area-tag">Coolidge</span>
+            <span class="area-tag">Maricopa</span>
+            <span class="area-tag">Eloy</span>
+            <span class="area-tag">Arizona City</span>
+            <span class="area-tag">Surrounding Areas</span>
+        </div>
+    </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+    <h2>Arizona Heat Doesn't Wait. Neither Do We.</h2>
+    <p>Call Brad directly — get a straight answer and a fair quote, fast.</p>
+    <a href="tel:6027487840" class="btn-blue-lg">📞 (602) 748-7840</a>
+</section>
+
+<!-- CONTACT -->
+<section class="section section-white" id="contact">
+    <div class="container">
+        <p class="section-label">Get In Touch</p>
+        <h2 class="section-title section-title-dark">Request a Free Quote</h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Contact Stone AC Cooling & Heating</h3>
+                <div class="contact-item">
+                    <div class="c-icon">📞</div>
+                    <div class="c-text"><strong>Phone</strong><a href="tel:6027487840">(602) 748-7840</a></div>
+                </div>
+                <div class="contact-item">
+                    <div class="c-icon">📍</div>
+                    <div class="c-text"><strong>Service Area</strong>Casa Grande, Phoenix, Coolidge, Maricopa, Eloy, Arizona City &amp; surrounding areas</div>
+                </div>
+                <div class="contact-item">
+                    <div class="c-icon">🕐</div>
+                    <div class="c-text"><strong>Availability</strong>Call anytime — emergency service available 24/7</div>
+                </div>
+                <div class="contact-item">
+                    <div class="c-icon">🏢</div>
+                    <div class="c-text"><strong>Serving</strong>Residential and commercial customers</div>
+                </div>
+                <div style="margin-top:1.5rem;padding:1.25rem;background:#eff6ff;border-radius:10px;border-left:4px solid var(--blue);">
+                    <p style="font-weight:800;color:var(--text);margin-bottom:0.25rem;">👨‍🔧 You're calling the owner</p>
+                    <p style="font-size:0.875rem;color:var(--text-lt);">When you call Stone HVAC, Brad picks up. Not a dispatcher — the guy doing your job.</p>
+                </div>
+            </div>
+            <form class="contact-form" action="https://formspree.io/f/PLACEHOLDER" method="POST">
+                <input type="hidden" name="_subject" value="Stone AC Website Lead">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Your Name</label>
+                        <input type="text" name="name" class="form-input" placeholder="Jane Smith" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phone Number</label>
+                        <input type="tel" name="phone" class="form-input" placeholder="(602) 000-0000" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" name="email" class="form-input" placeholder="you@email.com">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Service Needed</label>
+                    <select name="service" class="form-select">
+                        <option value="">Select a service...</option>
+                        <option>AC Repair</option>
+                        <option>AC Installation</option>
+                        <option>Heating Repair</option>
+                        <option>Furnace Installation</option>
+                        <option>System Maintenance</option>
+                        <option>Commercial HVAC</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Tell Us More</label>
+                    <textarea name="message" class="form-textarea" placeholder="What's going on with your system? Residential or commercial?"></textarea>
+                </div>
+                <button type="submit" class="form-submit">Send Request →</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <a href="/" class="logo-wrap">
+                <img src="493141381_1277036954421772_7666900756997524886_n.jpg" alt="Stone AC Cooling & Heating" class="logo-img">
+                <div class="logo-text">
+                    <span class="logo-name">Stone AC Cooling & Heating</span>
+                    <span class="logo-sub">Casa Grande · Phoenix Area</span>
+                </div>
+            </a>
+            <p>Family-owned HVAC serving Casa Grande and the Phoenix metro. Residential and commercial. Honest work at a fair price — every time.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Services</h4>
+            <a href="#services">AC Repair</a>
+            <a href="#services">AC Installation</a>
+            <a href="#services">Heating Repair</a>
+            <a href="#services">Furnace Installation</a>
+            <a href="#services">System Maintenance</a>
+            <a href="#services">Commercial HVAC</a>
+        </div>
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <a href="tel:6027487840">(602) 748-7840</a>
+            <a href="#contact">Get a Free Quote</a>
+            <a href="https://www.facebook.com/StoneHVAC/" target="_blank">Facebook</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 Stone AC Cooling & Heating LLC · All rights reserved.</p>
+        <p>Casa Grande · Phoenix · Coolidge · Maricopa · Eloy</p>
+    </div>
+</footer>
+
+</body>
+</html>
